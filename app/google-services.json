@@ -12,7 +12,20 @@
           "package_name": "edu.proyecto.expressfoodapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1000447103848-9kbcvffcj6566h2ju219bqinad4rrvf5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.proyecto.expressfoodapp",
+            "certificate_hash": "5947aa1cdc605ed84f240651004ee124f0fc32f8"
+          }
+        },
+        {
+          "client_id": "1000447103848-7mmu4lemmesa5mgn59ifqmhq3i3evk0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBSdTJyg03GeWXG2FMoeyWtib2J2r08bOs"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000447103848-7mmu4lemmesa5mgn59ifqmhq3i3evk0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
