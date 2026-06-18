@@ -13,7 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            // Dejamos el top en 0 para que el fondo verde del header suba hasta el borde superior.
+            // El header se encargará de dejar el espacio para la hora/batería.
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
             insets
         }
     }

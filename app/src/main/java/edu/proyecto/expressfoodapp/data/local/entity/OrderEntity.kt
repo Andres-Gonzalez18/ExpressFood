@@ -9,7 +9,14 @@ data class OrderEntity(
     val id: String,
 
     val userId: String,
+    val userEmail: String,
+
+    val itemsJson: String,
+
+    val subtotal: Double,
+    val tax: Double,
     val total: Double,
+
     val status: String,
     val date: Long,
 

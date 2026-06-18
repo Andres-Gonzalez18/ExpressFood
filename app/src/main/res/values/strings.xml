@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExpressFood</string>
+    <string name="monthly_total_format">Total mensual: ₡%1$s</string>
 </resources>

@@ -7,12 +7,12 @@ import androidx.room.PrimaryKey
 data class ProductEntity(
     @PrimaryKey
     val id: String,
-
     val name: String,
     val description: String,
     val price: Double,
     val imageUrl: String,
     val ingredients: String,
     val rating: Double,
+    val available: Boolean = true,
     val synced: Boolean = true
 )

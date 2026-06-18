@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutHeader"
+    android:layout_width="match_parent"
+    android:layout_height="112dp"
+    android:background="@color/express_primary"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="56dp"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/imgHeaderLogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logo_express_food"
+        android:scaleType="centerInside"
+        android:contentDescription="Logo" />
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="ExpressFood"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        app:icon="@drawable/ic_logout_exit"
+        app:iconTint="@color/white"
+        app:iconSize="24dp"
+        android:contentDescription="Salir" />
+
+</LinearLayout>

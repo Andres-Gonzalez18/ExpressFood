@@ -21,6 +21,8 @@ cardview = "1.0.0"
 glide = "4.16.0"
 mockito = "5.14.2"
 robolectric = "4.14"
+lifecycle = "2.9.4"
+coroutinesTest = "1.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -51,6 +53,8 @@ glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", versi
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
 robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -16,11 +16,17 @@ interface OrderDao {
     @Query("SELECT * FROM orders WHERE synced = 0")
     suspend fun getUnsyncedOrders(): List<OrderEntity>
 
+    @Query("SELECT * FROM orders WHERE status IN ('PENDIENTE', 'EN CAMINO')")
+    suspend fun getActiveOrders(): List<OrderEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOrder(order: OrderEntity)
 
     @Update
     suspend fun updateOrder(order: OrderEntity)
+
+    @Query("UPDATE orders SET status = 'CANCELADA', synced = 0 WHERE id = :orderId")
+    suspend fun cancelOrderLocally(orderId: String)
 
     @Query("UPDATE orders SET synced = 1 WHERE id = :orderId")
     suspend fun markAsSynced(orderId: String)

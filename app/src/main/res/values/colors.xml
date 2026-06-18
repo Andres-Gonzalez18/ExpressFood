@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <!-- Base -->
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Brand -->
+    <color name="express_primary">#10B981</color>
+    <color name="express_primary_dark">#059669</color>
+    <color name="express_primary_light">#D1FAE5</color>
+
+    <!-- Dark Theme -->
+    <color name="background_black">#000000</color>
+    <color name="card_gray">#333333</color>
+    <color name="background_light">#000000</color>
+    <color name="rating_background">#555555</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#BDBDBD</color>
+    <color name="text_black">#000000</color>
+
+    <!-- Status -->
+    <color name="status_pending">#F97316</color> <!-- Orange -->
+    <color name="status_shipping">#F59E0B</color> <!-- Yellow -->
+    <color name="status_delivered">#10B981</color> <!-- Green -->
+    <color name="status_cancelled">#EF4444</color> <!-- Red -->
+
+    <color name="success_green">#10B981</color>
+    <color name="error_red">#EF4444</color>
+    <color name="warning_yellow">#F59E0B</color>
+
+    <!-- Compatibility -->
+    <color name="express_orange">#10B981</color>
+    <color name="express_orange_dark">#059669</color>
+    <color name="express_orange_light">#D1FAE5</color>
 </resources>

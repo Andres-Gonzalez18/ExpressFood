@@ -72,8 +72,12 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
     testImplementation(libs.robolectric)
+    testImplementation(libs.kotlinx.coroutines.test)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.play.services.auth)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    testImplementation("androidx.test:core:1.6.1")
+
 }
