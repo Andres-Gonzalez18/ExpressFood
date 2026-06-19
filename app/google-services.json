@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1000447103848-3f94hl8k8c7phaa9uqp8lagu5ig2d1m9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.proyecto.expressfoodapp",
+            "certificate_hash": "4ca624ef68c67ee4e90f5b3f37e81a07bde77e71"
+          }
+        },
+        {
           "client_id": "1000447103848-9kbcvffcj6566h2ju219bqinad4rrvf5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

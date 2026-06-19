@@ -6,13 +6,9 @@ on:
       - develop
       - main
 
-  pull_request:
-    branches:
-      - develop
-      - main
-
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -28,12 +24,11 @@ jobs:
       - name: Grant permission to gradlew
         run: chmod +x gradlew
 
-      - name: Create google-services.json
-        run: |
-          echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
+      - name: Build project
+        run: ./gradlew build
 
-      - name: Run unit tests
-        run: ./gradlew testDebugUnitTest
+      - name: Run tests
+        run: ./gradlew test
 
       - name: Assemble Debug APK
         run: ./gradlew assembleDebug
