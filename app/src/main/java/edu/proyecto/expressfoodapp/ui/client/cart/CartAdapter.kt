@@ -54,7 +54,6 @@ class CartAdapter(
             parent,
             false
         )
-
         return CartViewHolder(binding)
     }
 

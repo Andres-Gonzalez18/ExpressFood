@@ -41,7 +41,6 @@ class AdminOrderAdapter(
             val productsText = order.items.joinToString(separator = "\n") { item ->
                 "${item.productName} x${item.quantity}"
             }
-
             binding.tvAdminProducts.text = "Productos:\n$productsText"
 
             val spinnerAdapter = ArrayAdapter(
@@ -49,11 +48,7 @@ class AdminOrderAdapter(
                 android.R.layout.simple_spinner_item,
                 statusOptions
             )
-
-            spinnerAdapter.setDropDownViewResource(
-                android.R.layout.simple_spinner_dropdown_item
-            )
-
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.spinnerOrderStatus.adapter = spinnerAdapter
 
             val currentIndex = statusOptions.indexOf(order.status)
@@ -70,24 +65,17 @@ class AdminOrderAdapter(
                         id: Long
                     ) {
                         val selectedStatus = statusOptions[position]
-
                         if (selectedStatus != order.status) {
                             onStatusChanged(order, selectedStatus)
                         }
                     }
 
-                    override fun onNothingSelected(
-                        parent: android.widget.AdapterView<*>?
-                    ) {
-                    }
+                    override fun onNothingSelected(parent: android.widget.AdapterView<*>?) {}
                 }
         }
 
         private fun formatDate(timestamp: Long): String {
-            val formatter = SimpleDateFormat(
-                "dd/MM/yyyy HH:mm",
-                Locale.getDefault()
-            )
+            val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
             return formatter.format(Date(timestamp))
         }
     }
@@ -98,7 +86,6 @@ class AdminOrderAdapter(
             parent,
             false
         )
-
         return AdminOrderViewHolder(binding)
     }
 

@@ -19,7 +19,6 @@ class SyncOrdersWorker(
             val orderDao = database.orderDao()
             val firestore = FirebaseFirestore.getInstance()
 
-            // 1. Validación de pedidos antiguos (> 24 horas)
             val currentTime = System.currentTimeMillis()
             val twentyFourHoursInMillis = 24 * 60 * 60 * 1000L
             val threshold = currentTime - twentyFourHoursInMillis
@@ -31,7 +30,6 @@ class SyncOrdersWorker(
                 }
             }
 
-            // 2. Sincronización con Firestore (incluye los cancelados arriba)
             val unsyncedOrders = orderDao.getUnsyncedOrders()
 
             unsyncedOrders.forEach { order ->

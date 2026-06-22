@@ -30,7 +30,6 @@ class AdminActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Indicador visual: Estamos en Inicio
         binding.btnOpenAdminHome.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnOpenAdminHome.setTextColor(getColor(R.color.express_primary_dark))
 
@@ -47,7 +46,11 @@ class AdminActivity : AppCompatActivity() {
         binding.header.btnLogout.visibility = View.VISIBLE
         binding.header.btnLogout.setOnClickListener {
             auth.signOut()
-            val googleClient = GoogleSignIn.getClient(this, GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build())
+            val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build()
+            val googleClient = GoogleSignIn.getClient(this, googleSignInOptions)
+            
             googleClient.signOut().addOnCompleteListener {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()

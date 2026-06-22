@@ -114,10 +114,8 @@ class ClientActivity : AppCompatActivity() {
             .setView(dialogBinding.root)
             .create()
 
-        // Configurar fondo transparente para que se vea el redondeado del CardView
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        // Cargar datos del producto
         dialogBinding.tvDialogProductName.text = product.name
         dialogBinding.tvDialogProductPrice.text = "₡${product.price}"
         
@@ -158,7 +156,6 @@ class ClientActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Indicador visual: Estamos en Menú
         binding.btnOpenMenu.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnOpenMenu.setTextColor(getColor(R.color.express_primary_dark))
         
@@ -200,7 +197,10 @@ class ClientActivity : AppCompatActivity() {
         binding.header.btnLogout.visibility = View.VISIBLE
         binding.header.btnLogout.setOnClickListener {
             auth.signOut()
-            val googleClient = GoogleSignIn.getClient(this, GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build())
+            val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build()
+            val googleClient = GoogleSignIn.getClient(this, googleSignInOptions)
             googleClient.signOut().addOnCompleteListener {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()

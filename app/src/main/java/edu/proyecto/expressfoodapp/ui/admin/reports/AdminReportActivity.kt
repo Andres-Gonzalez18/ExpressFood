@@ -61,7 +61,6 @@ class AdminReportActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Forzamos el color de selección para que no se "baje" visualmente
         binding.btnAdminReports.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnAdminReports.setTextColor(getColor(R.color.express_primary_dark))
 

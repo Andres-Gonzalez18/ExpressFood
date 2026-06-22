@@ -16,7 +16,6 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = AppDatabaseProvider.getDatabase(application)
     private val repository = CartRepository(database.cartDao())
-
     private val orderRepository = OrderRepository(database.orderDao())
 
     val cartItems = repository.getCartItems()
@@ -32,15 +31,12 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
 
     fun addToCart(item: CartItemEntity) {
         viewModelScope.launch {
-            // Buscamos si el producto ya existe en el carrito
             val currentItems = repository.getCartItems().first()
             val existingItem = currentItems.find { it.productId == item.productId }
 
             if (existingItem != null) {
-                // Si existe, aumentamos la cantidad
                 repository.updateItem(existingItem.copy(quantity = existingItem.quantity + 1))
             } else {
-                // Si no existe, lo agregamos normal
                 repository.addToCart(item)
             }
         }

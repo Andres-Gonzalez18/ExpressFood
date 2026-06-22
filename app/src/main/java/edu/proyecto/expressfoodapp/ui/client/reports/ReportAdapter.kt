@@ -32,7 +32,6 @@ class ReportAdapter : RecyclerView.Adapter<ReportAdapter.ReportViewHolder>() {
             parent,
             false
         )
-
         return ReportViewHolder(binding)
     }
 

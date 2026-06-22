@@ -34,12 +34,10 @@ class ProductAdapter(
                 .centerCrop()
                 .into(binding.imgProduct)
 
-            // Clic en el botón específico de agregar
             binding.btnAddToCart.setOnClickListener {
                 onAddToCartClick(product)
             }
             
-            // Clic en toda la tarjeta para ver el detalle
             binding.root.setOnClickListener {
                 onProductDetailClick(product)
             }

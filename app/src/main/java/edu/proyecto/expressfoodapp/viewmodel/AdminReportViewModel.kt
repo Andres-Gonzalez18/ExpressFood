@@ -31,7 +31,6 @@ class AdminReportViewModel : ViewModel() {
             try {
                 val orders = repository.getAllOrders()
 
-                // Agrupamos por el inicio del día (milisegundos) para un ordenamiento real
                 val groupedByDay = orders.groupBy { order ->
                     val cal = Calendar.getInstance()
                     cal.timeInMillis = order.date
@@ -42,7 +41,6 @@ class AdminReportViewModel : ViewModel() {
                     cal.timeInMillis
                 }
 
-                // Creamos los reportes y los ordenamos cronológicamente descendente
                 val reportsSorted = groupedByDay.keys.sortedDescending().map { timestamp ->
                     val ordersByDate = groupedByDay[timestamp] ?: emptyList()
                     DailyReport(

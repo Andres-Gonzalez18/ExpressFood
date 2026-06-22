@@ -33,10 +33,8 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
             val productsText = order.items.joinToString(separator = "\n") { item ->
                 "${item.productName} x${item.quantity}"
             }
-
             binding.tvOrderProducts.text = "Productos:\n$productsText"
 
-            // Aplicar colores según el estado
             val context = binding.root.context
             val colorRes = when (order.status) {
                 "PENDIENTE" -> R.color.status_pending
@@ -63,7 +61,6 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
             parent,
             false
         )
-
         return OrderViewHolder(binding)
     }
 

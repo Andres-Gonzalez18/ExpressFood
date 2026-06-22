@@ -64,7 +64,6 @@ class ClientReportActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Indicador visual: Estamos en Reportes
         binding.btnClientReports.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnClientReports.setTextColor(getColor(R.color.express_primary_dark))
 

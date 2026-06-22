@@ -15,6 +15,6 @@ class CartViewModelFactory(
             return CartViewModel(application) as T
         }
 
-        throw IllegalArgumentException("Unknown ViewModel")
+        throw IllegalArgumentException("Clase ViewModel desconocida: ${modelClass.name}")
     }
 }

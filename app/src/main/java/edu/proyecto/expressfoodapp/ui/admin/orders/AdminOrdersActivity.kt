@@ -32,6 +32,7 @@ class AdminOrdersActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     private val adminOrdersViewModel: AdminOrdersViewModel by viewModels()
+    
     private var allOrders: List<Order> = emptyList()
 
     private val statusOptions = listOf("TODAS", "PENDIENTE", "EN CAMINO", "ENTREGADA", "CANCELADA")
@@ -64,7 +65,6 @@ class AdminOrdersActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Indicador visual: Estamos en Órdenes
         binding.btnOpenAdminOrders.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnOpenAdminOrders.setTextColor(getColor(R.color.express_primary_dark))
 
@@ -79,7 +79,7 @@ class AdminOrdersActivity : AppCompatActivity() {
     }
 
     private fun setupLogout() {
-        binding.header.btnLogout.visibility = View.GONE // Oculto en secundarias si prefieres, o VISIBLE si quieres salir desde aquí
+        binding.header.btnLogout.visibility = View.GONE 
     }
 
     private fun setupStatusFilter() {
@@ -87,7 +87,9 @@ class AdminOrdersActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerStatusFilter.adapter = adapter
         binding.spinnerStatusFilter.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: android.widget.AdapterView<*>?, p1: View?, position: Int, p3: Long) { applyFilters() }
+            override fun onItemSelected(p0: android.widget.AdapterView<*>?, p1: View?, position: Int, p3: Long) { 
+                applyFilters() 
+            }
             override fun onNothingSelected(p0: android.widget.AdapterView<*>?) {}
         }
     }
@@ -95,7 +97,9 @@ class AdminOrdersActivity : AppCompatActivity() {
     private fun setupTextFilters() {
         val watcher = object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { applyFilters() }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { 
+                applyFilters() 
+            }
             override fun afterTextChanged(p0: Editable?) {}
         }
         binding.etClientFilter.addTextChangedListener(watcher)

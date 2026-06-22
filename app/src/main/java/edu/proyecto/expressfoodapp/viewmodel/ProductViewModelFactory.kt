@@ -15,6 +15,6 @@ class ProductViewModelFactory(
             return ProductViewModel(application) as T
         }
 
-        throw IllegalArgumentException("Unknown ViewModel class")
+        throw IllegalArgumentException("Clase ViewModel desconocida: ${modelClass.name}")
     }
 }

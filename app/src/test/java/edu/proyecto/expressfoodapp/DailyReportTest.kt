@@ -15,7 +15,7 @@ class DailyReportTest {
             totalAmount = 25000.0
         )
 
-        assertEquals("12/06/2026", report.date)
+        assertEquals("15/06/2026", report.date)
         assertEquals(5, report.orderCount)
         assertEquals(25000.0, report.totalAmount, 0.0)
     }

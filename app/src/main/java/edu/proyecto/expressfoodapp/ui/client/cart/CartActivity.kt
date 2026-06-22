@@ -22,6 +22,7 @@ class CartActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCartBinding
     private lateinit var cartAdapter: CartAdapter
+    
     private var currentItems: List<CartItemEntity> = emptyList()
 
     private val cartViewModel: CartViewModel by viewModels {
@@ -95,7 +96,6 @@ class CartActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Indicador visual: Estamos en Carrito
         binding.btnOpenCart.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnOpenCart.setTextColor(getColor(R.color.express_primary_dark))
 
@@ -115,6 +115,10 @@ class CartActivity : AppCompatActivity() {
 
     private fun setupCheckout() {
         binding.btnCheckout.setOnClickListener {
+            if (currentItems.isEmpty()) {
+                Toast.makeText(this, "El carrito está vacío", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             binding.btnCheckout.isEnabled = false
             binding.btnCheckout.text = "Procesando..."
@@ -136,11 +140,7 @@ class CartActivity : AppCompatActivity() {
                     binding.btnCheckout.isEnabled = true
                     binding.btnCheckout.text = "Procesar Orden"
 
-                    Toast.makeText(
-                        this,
-                        message,
-                        Toast.LENGTH_LONG
-                    ).show()
+                    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
                 }
             )
         }

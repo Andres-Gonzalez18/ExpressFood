@@ -86,10 +86,7 @@ class OrdersActivity : AppCompatActivity() {
                     ordersViewModel.applyFilter(selectedStatus)
                 }
 
-                override fun onNothingSelected(
-                    parent: android.widget.AdapterView<*>?
-                ) {
-                }
+                override fun onNothingSelected(parent: android.widget.AdapterView<*>?) {}
             }
         )
     }
@@ -103,7 +100,6 @@ class OrdersActivity : AppCompatActivity() {
     }
 
     private fun setupNavbar() {
-        // Indicador visual: Estamos en Órdenes
         binding.btnOpenOrders.setBackgroundColor(getColor(R.color.express_primary_light))
         binding.btnOpenOrders.setTextColor(getColor(R.color.express_primary_dark))
 
@@ -122,7 +118,6 @@ class OrdersActivity : AppCompatActivity() {
     }
 
     private fun setupLogout() {
-        // Ocultamos el botón de logout en órdenes para dejarlo solo en el panel principal
         binding.header.btnLogout.visibility = View.GONE
     }
 }
